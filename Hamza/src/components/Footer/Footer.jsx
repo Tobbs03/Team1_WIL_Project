@@ -2,6 +2,11 @@ import React, { useContext } from "react";
 import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../store/auth-context";
+import { FaInstagramSquare } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { IoLogoYoutube } from "react-icons/io5";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { BiFoodMenu } from "react-icons/bi";
 
 const Footer = () => {
   const authCtx = useContext(AuthContext);
@@ -11,117 +16,49 @@ const Footer = () => {
 
   return (
     <footer className={styles.footerDistributed}>
-      <div className={styles.footerLeft}>
-        <h3>
-          Social <span>Awareness</span>
-        </h3>
-        <p className={styles.footerLinks}>
-          <Link
-            to={"/home"}
-            className={`${styles.link} ${styles.link1}`}
-            onClick={() => {
-              handleClick();
-            }}
-          >
-            <span> Home</span>
-          </Link>
-
-          <span>
-            <Link
-              to={"/vision"}
-              className={styles.link}
-              onClick={() => {
-                handleClick();
-              }}
+      <div>
+        <span className={styles.icon}>
+          <BiFoodMenu />
+        </span>
+      </div>
+      <div>
+        <div className={styles.socialIcons}>
+          <span className={styles.icon}>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span>Vision</span>
-            </Link>
+              <BsTwitterX />
+            </a>
           </span>
-          <Link
-            to={"/advertisement"}
-            className={styles.link}
-            onClick={() => {
-              handleClick();
-            }}
-          >
-            <span>Advertisement</span>
-          </Link>
-          <Link
-            to={"/causes"}
-            className={styles.link}
-            onClick={() => {
-              handleClick();
-            }}
-          >
-            <span> Causes</span>
-          </Link>
-          <Link
-            to={"/contact-us"}
-            className={styles.link}
-            onClick={() => {
-              handleClick();
-            }}
-          >
-            <span> Contact</span>
-          </Link>
-          {!authCtx.isLoggedIn ? (
-            <Link
-              to={"/sign-in"}
-              className={styles.link}
-              onClick={() => {
-                handleClick();
-              }}
+          <span className={styles.icon}>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span>Sign-in</span>
-            </Link>
-          ) : (
-            ""
-          )}
-        </p>
-        <p className={styles.footerCompanyName}>Company Name © 2015</p>
-      </div>
-
-      <div className={styles.footerCenter}>
-        <div>
-          <i className="fas fa-map-marker"></i>
-          <p>
-            <span>444 S. Cedros Ave</span> Solana Beach, California
-          </p>
-        </div>
-
-        <div>
-          <i className="fas fa-phone"></i>
-          <p>+1.555.555.5555</p>
-        </div>
-
-        <div className={styles.componymail}>
-          <i className="fas fa-envelope"></i>
-          <p>
-            <a href="mailto:support@company.com">support@company.com</a>
-          </p>
-        </div>
-      </div>
-
-      <div className={styles.footerRight}>
-        <p className={styles.footerCompanyAbout}>
-          <span>About the company</span>
-          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-          euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
-
-        <div className={styles.footericons}>
-          <a href="https://www.facebook.com" target="_Blank">
-            <i className="fab fa-facebook"></i>
-          </a>
-          <a href="https://www.twitter.com" target="_Blank">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.linkedin.com" target="_Blank">
-            <i className="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.github.com" target="_Blank">
-            <i className="fab fa-github"></i>
-          </a>
+              <FaInstagramSquare />
+            </a>
+          </span>
+          <span className={styles.icon}>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IoLogoYoutube />
+            </a>
+          </span>
+          <span className={styles.icon}>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IoLogoLinkedin />
+            </a>
+          </span>
         </div>
       </div>
     </footer>

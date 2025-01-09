@@ -1,11 +1,9 @@
 import React, { useContext, useState } from "react";
-import styles from "../SignUp/SignUp.module.css";
+import styles from "../SignIn/SignIn.module.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../../components/Loader/Loader";
 import { UserLoginAPI } from "../../../utils/http";
 import { AuthContext } from "../../../store/auth-context";
-
-import { Link } from "react-router-dom";
 const SignIn = () => {
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
@@ -22,7 +20,7 @@ const SignIn = () => {
     },
   });
 
-  function inputChangeHandler(inputIdentifier, enteredValue) {
+  function InputChangeHandler(inputIdentifier, enteredValue) {
     setinputs((currentInputs) => {
       return {
         ...currentInputs,
@@ -37,7 +35,7 @@ const SignIn = () => {
     });
   }
 
-  const handleSubmit = async (e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault();
 
     const isUserNameValid = inputs.username.value.trim().length > 0;
@@ -67,7 +65,6 @@ const SignIn = () => {
     };
 
     const sendRes = await UserLoginAPI(data);
-    // console.log(sendRes);
     if (sendRes.success) {
       alert(`Success: ${sendRes.message}`);
       if (sendRes.data.user.role === "user") {
@@ -86,11 +83,12 @@ const SignIn = () => {
   };
 
   return (
-    <div className="singin-up-h">
+    <div className={styles.singinuph}>
+      <div className={styles.heading}>
+        <span>SIGN IN PAGE</span>
+      </div>
       <div className={styles.container}>
-        <form onSubmit={handleSubmit} className={styles.formComponent}>
-          <p>Sign In</p>
-
+        <form onSubmit={HandleSubmit} className={styles.formComponent}>
           <div className={styles.inputContainer}>
             <label htmlFor="user-og-username">Username</label>
             <div
@@ -104,10 +102,10 @@ const SignIn = () => {
                 name="username"
                 required
                 className={styles.inputControl}
-                placeholder="ex: jonDoe"
+                placeholder="value"
                 value={inputs.username.value}
                 onChange={(e) => {
-                  inputChangeHandler("username", e.target.value);
+                  InputChangeHandler("username", e.target.value);
                 }}
               />
             </div>
@@ -128,13 +126,13 @@ const SignIn = () => {
               <input
                 type={!showPass ? "password" : "text"}
                 id="user-og-password"
-                name="email"
+                name="password"
                 required
                 className={styles.inputControl}
-                placeholder=""
+                placeholder="value"
                 value={inputs.password.value}
                 onChange={(e) => {
-                  inputChangeHandler("password", e.target.value);
+                  InputChangeHandler("password", e.target.value);
                 }}
               />
 
@@ -155,7 +153,7 @@ const SignIn = () => {
             </div>
             {!inputs.password.isValid && (
               <span className={styles.errorText}>
-                Please Enter Password (atleast 6 chars)
+                Please Enter Password (at least 6 chars)
               </span>
             )}
           </div>
@@ -165,8 +163,7 @@ const SignIn = () => {
           </button>
 
           <div className={styles.alreadyAccountBox}>
-            <span>Don't have an Account?</span>
-            <Link to={"/sign-up"}>Sign Up</Link>
+            <span>Forgot password?</span>
           </div>
         </form>
       </div>

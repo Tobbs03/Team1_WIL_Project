@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./ContactUs.module.css";
 import Loader from "../../components/Loader/Loader";
-import ContactImg from "../../assets/contact-us.jpg";
 import { AuthContext } from "../../store/auth-context";
 import { CreateContactAPI } from "../../utils/http";
 
@@ -29,7 +28,7 @@ const ContactUs = () => {
   };
   const [inputs, setInputs] = useState(initialinputs);
 
-  function inputChangeHandler(inputIdentifier, enteredValue) {
+  function InputChangeHandle(inputIdentifier, enteredValue) {
     setInputs((currentInputs) => {
       return {
         ...currentInputs,
@@ -41,7 +40,7 @@ const ContactUs = () => {
     });
   }
 
-  const handleSubmit = async (e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault();
 
     if (!userData) {
@@ -95,7 +94,6 @@ const ContactUs = () => {
     const submitRes = await CreateContactAPI(data, userData.token);
 
     if (submitRes.success) {
-      // console.log("submitRes", submitRes);
       alert("submit success");
     } else {
     }
@@ -104,19 +102,15 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="H">
+    <div className={styles.H}>
+      <div className={styles.headerContainer}>
+        <span>Contact Us</span>
+      </div>
       <div className={styles.contactContainer}>
-        <form onSubmit={handleSubmit} className={styles.formContainer}>
-          <div className={styles.headerContainer}>
-            <h1 className="text-center">Contact Us</h1>
-            <p className="text-center">
-              Subheading for Description or Instructions
-            </p>
-          </div>
-
+        <form onSubmit={HandleSubmit} className={styles.formContainer}>
           <div className={styles.inputRow}>
             <div className={styles.inputContainer}>
-              <label htmlFor="user-f-name">First Name*</label>
+              <label htmlFor="user-f-name">First Name</label>
               <div
                 className={`${styles.inputWrapper} ${
                   !inputs.firstName.isValid ? styles.inputError : null
@@ -128,10 +122,10 @@ const ContactUs = () => {
                   name="firstName"
                   required
                   className={styles.inputControl}
-                  placeholder="ex: Jon"
+                  placeholder="value"
                   value={inputs.firstName.value}
                   onChange={(e) => {
-                    inputChangeHandler("firstName", e.target.value);
+                    InputChangeHandle("firstName", e.target.value);
                   }}
                 />
               </div>
@@ -143,7 +137,7 @@ const ContactUs = () => {
             </div>
 
             <div className={styles.inputContainer}>
-              <label htmlFor="user-l-name">Last Name*</label>
+              <label htmlFor="user-l-name">Last Name</label>
               <div
                 className={`${styles.inputWrapper} ${
                   !inputs.lastName.isValid ? styles.inputError : null
@@ -155,10 +149,10 @@ const ContactUs = () => {
                   name="lastName"
                   required
                   className={styles.inputControl}
-                  placeholder="ex: Doe"
+                  placeholder="value"
                   value={inputs.lastName.value}
                   onChange={(e) => {
-                    inputChangeHandler("lastName", e.target.value);
+                    InputChangeHandle("lastName", e.target.value);
                   }}
                 />
               </div>
@@ -169,7 +163,7 @@ const ContactUs = () => {
           </div>
 
           <div className={styles.inputContainer}>
-            <label htmlFor="user-email">Email*</label>
+            <label htmlFor="user-email">Email</label>
             <div
               className={`${styles.inputWrapper} ${
                 !inputs.email.isValid ? styles.inputError : null
@@ -181,10 +175,10 @@ const ContactUs = () => {
                 name="email"
                 required
                 className={styles.inputControl}
-                placeholder="ex: jon.doe@gmail.com"
+                placeholder="value"
                 value={inputs.email.value}
                 onChange={(e) => {
-                  inputChangeHandler("email", e.target.value);
+                  InputChangeHandle("email", e.target.value);
                 }}
               />
             </div>
@@ -194,7 +188,7 @@ const ContactUs = () => {
           </div>
 
           <div className={styles.inputContainer}>
-            <label htmlFor="user-message">Message*</label>
+            <label htmlFor="user-message">Message</label>
             <div
               className={`${styles.inputWrapper} ${
                 !inputs.message.isValid ? styles.inputError : null
@@ -207,10 +201,10 @@ const ContactUs = () => {
                 required
                 rows={4}
                 className={styles.inputControl}
-                placeholder="message.."
+                placeholder="value"
                 value={inputs.message.value}
                 onChange={(e) => {
-                  inputChangeHandler("message", e.target.value);
+                  InputChangeHandle("message", e.target.value);
                 }}
               />
             </div>
@@ -225,29 +219,6 @@ const ContactUs = () => {
             SUBMIT
           </button>
         </form>
-
-        <div className={styles.imgContainer}>
-          <img
-            src={ContactImg}
-            alt={"Contact Image"}
-            className={styles.contactImg}
-          />
-
-          <div className={styles.contactInfoContainer}>
-            <div className={styles.contactInfoRow}>
-              <i class="fa-solid fa-phone"></i>
-              <span>+91 - 1234567890</span>
-            </div>
-            <div className={styles.contactInfoRow}>
-              <i class="fa-solid fa-envelope"></i>
-              <span>jon.doe@gmail.com</span>
-            </div>
-            <div className={styles.contactInfoRow}>
-              <i class="fa-solid fa-location-dot"></i>
-              <span>abc address</span>
-            </div>
-          </div>
-        </div>
       </div>
 
       {loading && <Loader />}

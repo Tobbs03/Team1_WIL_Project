@@ -1,179 +1,94 @@
+/* module.css */
+
 .container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-top: 30px;
-    width: 100%;
-    padding: 15px;
-    min-height: 100vh;
-    /* background-color: #f4f4f9; */
-    background: repeating-linear-gradient(45deg,
-            #f6f9fc,
-            #f6f9fc 10px,
-            #e1e8f0 10px,
-            #e1e8f0 20px);
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+    background-color: #0a8fe2;
 }
 
 .formComponent {
-    padding: 25px;
-    border: 2px solid #dedede;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
-    backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, #00bcd4, #8e44ad);
-    /* Gradient added */
-    color: white;
+    background-color: white;
+    width: 50%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.formComponent p {
+h2 {
     text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-top: 0;
-    color: #ffffff;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .inputContainer {
-    margin-bottom: 25px;
-    width: 400px;
-}
-
-.inputContainer label {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 22px;
-    color: #ffffff;
-    /* White color for label */
-    margin-bottom: 8px;
+    margin-bottom: 20px;
+    width: 50%;
 }
 
 .inputWrapper {
-    border-radius: 8px;
-    background-color: #ffffff;
-    border: 1px solid #e3e3e3;
-    overflow: hidden;
-    display: flex;
-    transition: border-color 0.3s ease;
+    position: relative;
 }
 
-.inputWrapper input {
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #e3e3e3;
-    outline: none;
+.inputControl {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 16px;
-    color: #333;
-    flex: 1;
-    background-color: #f5f5f5;
-    /* Light grey background for input */
-    transition: background-color 0.3s ease;
-}
-
-.inputWrapper input:focus {
-    background-color: #e8f0fe;
-    /* Light blue on focus */
-    border-color: #62cf6e;
-    /* Green border on focus */
-}
-
-.inputWrapper button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    padding: 14px 15px;
-    background-color: #62cf6e;
-    /* Green button */
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.inputWrapper button:hover {
-    background-color: #4fa45f;
-    /* Darker green on hover */
-}
-
-.inputWrapper:focus-within {
-    border: 1px solid #62cf6e;
+    background-color: #fff;
 }
 
 .inputError {
-    border: 1px solid #d97578;
-}
-
-.inputControl:focus {
-    outline: none;
-    box-shadow: none;
-    border-color: #0082e6;
-}
-
-.form-control:focus {
-    color: #023856;
-    outline: none !important;
-    border: none !important;
-}
-
-.submitBtn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    background-color: #0082e6;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submitBtn:hover {
-    background-color: #006db3;
-    /* Darker blue on hover */
-}
-
-.alreadyAccountBox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.alreadyAccountBox span {
-    color: #ffffff;
-    font-size: 16px;
-}
-
-.alreadyAccountBox a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    transition: all 0.3s ease-in-out;
-}
-
-.alreadyAccountBox a:hover {
-    transform: scale(1.1);
-    background: transparent;
+    border-color: #ff4d4f;
 }
 
 .errorText {
-    padding: 10px;
-    color: #d97578;
-    font-size: 14px;
-    font-weight: 600;
-    background-color: #f8d7da;
-    border-radius: 5px;
-    margin-top: 10px;
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
-@media (max-width: 450px) {
-    .formComponent {
-        width: 95%;
-        padding: 20px;
-    }
+.passwordButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
-    .inputContainer {
-        width: 100%;
-    }
+.submitBtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 50%;
+}
+
+.heading {
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+    font-size: 50px;
+}
+
+.submitBtn:hover {
+    background-color: #555;
+}
+
+.alreadyAccountBox {
+    display: none;
+    /* Hide the sign-in section */
 }

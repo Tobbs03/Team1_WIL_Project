@@ -1,0 +1,171 @@
+
+.darkBG {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal {
+    width: 450px;
+    background: white;
+    color: white;
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+.modalHeader {
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.heading {
+    margin: 0;
+    padding: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+.modalActions {
+    margin-bottom: 10px;
+    width: 100%;
+}
+.actionsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.closeBtn {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-self: flex-end;
+    margin-top: -7px;
+    margin-right: -7px;
+}
+.closeBtn:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(-4px, 4px);
+}
+.submitBtn {
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    border: none;
+    color: #fff;
+    background: #41adff;
+    transition: all 0.25s ease;
+    width: fill-available;
+}
+.submitBtn:hover {
+    box-shadow: 0 10px 20px -10px rgba(46, 136, 239, 0.6);
+    transform: translateY(-5px);
+    background: #0082e6;
+}
+.cancelBtn {
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    border: none;
+    color: #fff;
+    background: #ff3e4e;
+    transition: all 0.25s ease;
+    width: fill-available;
+}
+.cancelBtn:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+    background: #f01b2c;
+}
+
+.formComponent {
+    padding: 20px;
+}
+.inputContainer {
+    margin-bottom: 20px;
+}
+
+.inputContainer label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: left;
+    color: #023856;
+    margin-bottom: 5px;
+}
+
+.inputWrapper {
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #EBEBFF;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.inputWrapper input {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #023856;
+    flex: 1;
+    
+}
+.inputWrapper:focus-within {
+    border: 1px solid #62CF6E;
+}
+.inputError {
+    border: 1px solid #D97578;
+}
+.inputControl:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: none;
+}
+.form-control:focus {
+    color: #023856;
+    outline: none !important;
+    border: none !important;
+}
+.amountIconContainer {
+    padding: 0 10px;
+}
+.amountIconContainer i {
+    color: black;
+}
+.errorText {
+    padding: 8px;
+    color: #D97578;
+    font-size: 12px;
+    font-weight: 600;
+}

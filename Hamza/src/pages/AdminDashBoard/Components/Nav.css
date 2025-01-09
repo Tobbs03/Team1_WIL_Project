@@ -1,0 +1,9 @@
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -71px !important;
+    /* width: 100px; */
+    margin-top: var(--bs-dropdown-spacer);
+}
+/* .custom{
+    z-index: 1;
+} */

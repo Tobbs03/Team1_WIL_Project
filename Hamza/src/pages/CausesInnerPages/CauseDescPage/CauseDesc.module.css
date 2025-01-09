@@ -1,0 +1,103 @@
+.container {
+    padding-top: 20px;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.headerContainer button {
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3S ease-in-out;
+}
+.headerContainer button i {
+    color: #0082e6;
+    font-size: 20px;
+    transition: all 0.3S ease-in-out;
+}
+
+.headerContainer button:hover i {
+    transform: scale(1.2);
+}
+
+
+.headerContainer h1,
+.headerContainer p {
+    margin: 0;
+}
+
+.headerContainer h1 {
+    font-size: 50px;
+    color: #0082e6;
+}
+
+.headerContainer p {
+    font-size: 18px;
+    color: #024980;
+    font-weight: 600;
+}
+
+
+.mainContainer {
+    padding: 50px;
+    display: flex;
+}
+
+.contentContainer {
+    flex: 1;
+}
+
+.imgContainer {
+    width: 300px;
+    margin-left: 20px;
+}
+
+.imgContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.buttonContainer button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #41adff;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttonContainer button:hover {
+    transform: scale(1.1);
+}
+
+.buttonContainer button i {
+    font-size: 16px;
+    color: #fff;
+}
+
+.buttonContainer button span {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #fff;
+}

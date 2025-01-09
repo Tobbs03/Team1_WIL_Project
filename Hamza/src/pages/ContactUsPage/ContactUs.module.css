@@ -1,0 +1,163 @@
+.contactContainer {
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,
+            #f6f9fc,
+            #f6f9fc 10px,
+            #e1e8f0 10px,
+            #e1e8f0 20px);
+}
+
+.formContainer {
+    flex: 1.5;
+}
+
+.headerContainer {
+    margin-bottom: 40px;
+}
+
+.headerContainer h1 {
+    font-size: 50px;
+    color: #0082e6;
+    margin: 0;
+}
+
+.headerContainer p {
+    font-size: 18px;
+    color: #024980;
+    font-weight: 600;
+    margin: 0;
+}
+
+.inputRow {
+    display: flex;
+    gap: 10px;
+}
+
+.inputRow .inputContainer {
+    flex: 1;
+}
+
+.inputContainer {
+    margin-bottom: 20px;
+    /* width: 350px; */
+}
+
+.inputContainer label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: left;
+    color: #023856;
+    margin-bottom: 5px;
+}
+
+.inputWrapper {
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #EBEBFF;
+    overflow: hidden;
+    display: flex;
+}
+
+.inputWrapper input,
+.inputWrapper textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ebebff;
+    outline: none;
+    font-size: 16px;
+    color: #023856;
+    flex: 1;
+}
+
+.inputWrapper textarea {
+    resize: vertical;
+}
+
+.inputWrapper:focus-within {
+    border: 1px solid #62CF6E;
+}
+
+.inputError {
+    border: 1px solid #D97578;
+}
+
+.errorText {
+    padding: 8px;
+    color: #D97578;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inputControl:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: none;
+}
+
+.formContainer button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: fill-available;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: #0082e6;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+
+
+.imgContainer {
+    flex: 1;
+    background-color: #fff;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.imgContainer .contactImg {
+    width: 80%;
+    object-fit: contain;
+    flex: 1;
+}
+
+.contactInfoContainer {
+    width: 100%;
+    padding: 20px;
+}
+
+.contactInfoContainer .contactInfoRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.contactInfoRow i {
+    width: 20px;
+    color: #3d405b;
+}
+
+.contactInfoRow span {
+    color: #3d405b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.H {
+    min-height: 100vh;
+    padding: 10px;
+}

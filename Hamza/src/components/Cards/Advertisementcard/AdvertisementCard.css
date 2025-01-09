@@ -1,0 +1,27 @@
+  div img{
+  width: 50px;
+  height: 50px; 
+  border-radius: 50%;
+}
+ h5{
+  padding: 2px;
+  margin: 5px;
+}
+ p{
+  padding: 2px;
+  margin: 5px;
+  font-size: 12px;
+  line-break: auto;
+}
+
+.BtnAdv{
+   outline: none  !important;
+   border: none !important;
+   padding: 20px !important;
+   border-radius: 8px !important;
+   font-size: 20px !important;
+   font-weight: bold !important;
+   color: #fff !important;
+   background-color: #41adff !important;
+   transition: all 0.3s ease-in-out !important;
+}

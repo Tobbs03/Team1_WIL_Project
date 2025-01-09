@@ -1,0 +1,180 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.formComponent {
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    backdrop-filter: blur(5px);
+    width: 600px;
+}
+
+.headerContainer {
+    position: relative;
+}
+
+.headerContainer button {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.headerContainer button i {
+    transition: all 0.3 ease-in-out;
+}
+
+.headerContainer button:hover i {
+    transform: scale(1.2);
+}
+
+
+.formComponent .headerContainer p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+
+.inputContainer {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+.inputContainer label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: left;
+    color: #023856;
+    margin-bottom: 5px;
+}
+
+
+.inputWrapper {
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #EBEBFF;
+    overflow: hidden;
+    display: flex;
+}
+
+.inputWrapper input,
+.inputWrapper textarea,
+.inputWrapper select {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ebebff;
+    outline: none;
+    font-size: 16px;
+    color: #023856;
+    flex: 1;
+    
+}
+
+
+
+.inputWrapper:focus-within {
+    border: 1px solid #62CF6E;
+}
+
+.inputError {
+    border: 1px solid #D97578;
+}
+  
+  
+.inputControl:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: none;
+}
+  
+.form-control:focus {
+    color: #023856;
+    outline: none !important;
+    border: none !important;
+}
+
+
+.alreadyAccountBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.alreadyAccountBox span {
+    color: black;
+    font-size: 16px;
+}
+
+.alreadyAccountBox a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0082e6;
+    transition: all 0.3s ease-in-out;
+}
+
+.alreadyAccountBox a:hover {
+    transform: scale(1.1);
+    background: transparent;
+}
+
+.buttonBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonBox button {
+    width: fill-available;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.cancelBtn {
+    background-color: #ed4134;
+}
+
+.submitBtn {
+    background-color: #0082e6;
+}
+
+
+.errorText {
+    padding: 8px;
+    color: #D97578;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+
+@media(max-width: 450px) {
+    .formComponent {
+        width: 100%;
+    }
+
+    .inputContainer {
+        width: -webkit-fill-available;
+        width: fill-available;
+    }
+}

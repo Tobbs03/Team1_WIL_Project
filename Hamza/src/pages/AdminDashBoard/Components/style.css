@@ -1,0 +1,10 @@
+.sidebar{
+
+    width: 1.375rem;
+
+}
+
+.list-group Link:hover{
+    background: #dadada;
+    color: white;
+}

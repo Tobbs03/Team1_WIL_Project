@@ -3,7 +3,6 @@ import styles from "./SignUp.module.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../../components/Loader/Loader";
 import { UserRegisterAPI } from "../../../utils/http";
-import { Link } from "react-router-dom";
 const SignUp = () => {
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
@@ -28,7 +27,7 @@ const SignUp = () => {
     },
   });
 
-  function inputChangeHandler(inputIdentifier, enteredValue) {
+  function InputChangeHandler(inputIdentifier, enteredValue) {
     setinputs((currentInputs) => {
       return {
         ...currentInputs,
@@ -43,7 +42,7 @@ const SignUp = () => {
     });
   }
 
-  const handleSubmit = async (e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault();
 
     const isNameValid = inputs.name.value.trim().length > 0;
@@ -98,9 +97,10 @@ const SignUp = () => {
   return (
     <div>
       <div className={styles.container}>
-        <form onSubmit={handleSubmit} className={styles.formComponent}>
-          <p>Sign Up</p>
-
+        <div className={styles.heading}>
+          <span>Registration Page</span>
+        </div>
+        <form onSubmit={HandleSubmit} className={styles.formComponent}>
           <div className={styles.inputContainer}>
             <label htmlFor="user-og-name">Name</label>
             <div
@@ -114,10 +114,10 @@ const SignUp = () => {
                 name="name"
                 required
                 className={styles.inputControl}
-                placeholder="ex: Jon Doe"
+                placeholder="value"
                 value={inputs.name.value}
                 onChange={(e) => {
-                  inputChangeHandler("name", e.target.value);
+                  InputChangeHandler("name", e.target.value);
                 }}
               />
             </div>
@@ -139,10 +139,10 @@ const SignUp = () => {
                 name="email"
                 required
                 className={styles.inputControl}
-                placeholder="ex: jonDoe@gmail.com"
+                placeholder="value"
                 value={inputs.email.value}
                 onChange={(e) => {
-                  inputChangeHandler("email", e.target.value);
+                  InputChangeHandler("email", e.target.value);
                 }}
               />
             </div>
@@ -164,10 +164,10 @@ const SignUp = () => {
                 name="username"
                 required
                 className={styles.inputControl}
-                placeholder="ex: jonDoe"
+                placeholder="value"
                 value={inputs.username.value}
                 onChange={(e) => {
-                  inputChangeHandler("username", e.target.value);
+                  InputChangeHandler("username", e.target.value);
                 }}
               />
             </div>
@@ -188,18 +188,18 @@ const SignUp = () => {
               <input
                 type={!showPass ? "password" : "text"}
                 id="user-og-password"
-                name="email"
+                name="password"
                 required
                 className={styles.inputControl}
-                placeholder=""
+                placeholder="value"
                 value={inputs.password.value}
                 onChange={(e) => {
-                  inputChangeHandler("password", e.target.value);
+                  InputChangeHandler("password", e.target.value);
                 }}
               />
 
               <button
-                type="reset"
+                type="button"
                 className={styles.passwordButton}
                 onClick={(e) => {
                   e.preventDefault();
@@ -215,19 +215,14 @@ const SignUp = () => {
             </div>
             {!inputs.password.isValid && (
               <span className={styles.errorText}>
-                Please Enter Password (atleast 6 chars)
+                Please Enter Password (at least 6 characters)
               </span>
             )}
           </div>
 
-          <button type="submit" id="begin" className={styles.submitBtn}>
+          <button type="submit" className={styles.submitBtn}>
             Submit
           </button>
-
-          <div className={styles.alreadyAccountBox}>
-            <span>Already have an Account?</span>
-            <Link to={"/sign-in"}>Sign In</Link>
-          </div>
         </form>
       </div>
 

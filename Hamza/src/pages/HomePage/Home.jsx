@@ -1,41 +1,118 @@
 import React from "react";
-import "./Home.css";
-import { Container } from "react-bootstrap";
-import WalkingGuyImg from "../../assets/walking-dude.jpg";
+import styles from "./Home.module.css";
+import User from "../../assets/user.jpg";
+
 const Home = () => {
   return (
-    <div className="py-3 Height Home">
-      <div className="contentContainer px-3">
-        <div className="contentContainer">
-          <h1>Home</h1>
-          <p className="subHeader">
-            Subheading for description or instructions
-          </p>
+    <div className={styles.mainContainer}>
+      <div className={styles.firstDiv}>
+        <div className={styles.firstPart}>
+          <h2 className={styles.heading}>USER PROFILE</h2>
+          <div className={styles.form}>
+            <div>
+              <label htmlFor="Name">Name</label>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  alignItems: "center",
+                  width: "60%",
+                }}
+              >
+                <input
+                  id="Name"
+                  type="text"
+                  placeholder="value"
+                  className={styles.inputField}
+                />
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-pen"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div>
+              <label htmlFor="Email">Email</label>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  alignItems: "center",
+                  width: "60%",
+                }}
+              >
+                <input
+                  id="Email"
+                  type="text"
+                  placeholder="value"
+                  className={styles.inputField}
+                />
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-pen"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div>
+              <label htmlFor="ChangePassword">Change Password</label>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  alignItems: "center",
+                  width: "60%",
+                }}
+              >
+                <input
+                  id="Change Password"
+                  type="text"
+                  placeholder="value"
+                  className={styles.inputField}
+                />
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-pen"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.secondDiv}>
+          <div className={styles.btncontainer}>
+            <button className={styles.button}>MAKE A NEW CAMPAIGN</button>
+            <button className={styles.button}>ADVERTISE YOUR BUSINESS</button>
+          </div>
         </div>
       </div>
-      <div className="row w-100 px-3">
-        <div className="col-md-8  d-flex align-items-center justify-content-center">
-          <div className="mt-2 py-auto">
-            <p className="content">
-              Body text for your whole article or post. We’ll put in some lorem
-              ipsum to show how a filled-out page might look
-            </p>
-            <br />
-            <p className="content">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam,
-              nulla doloribus? Delectus natus accusamus quae magni, corporis
-              harum nisi obcaecati eum eos deserunt sit atque quibusdam dolore.
-              Libero, ad provident. Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Quis, nemo sequi quasi voluptates amet nam
-              minima, nihil sint provident ratione eaque officiis deleniti,
-              doloremque eius veritatis ea! Quisquam, autem placeat.
-            </p>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="py-1 px-1  imageContainer w-100">
-            <img src={WalkingGuyImg} alt={"Walking Guy"} />
-          </div>
+
+      <div className={styles.imageContainer}>
+        <div className={styles.imgbox}>
+          <img src={User} alt="Walking Dude" className={styles.image} />
         </div>
       </div>
     </div>
